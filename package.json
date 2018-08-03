@@ -1,0 +1,32 @@
+{
+  "name": "@little-saga/use-saga",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Run little-saga inside a React component using React hooks.",
+  "author": {
+    "name": "shinima",
+    "email": "842351815@qq.com"
+  },
+  "main": "dist/react-model.js",
+  "module": "dist/react-model.mjs",
+  "typings": "react-model.d.ts",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "prepublishOnly": "rimraf dist && npm run build"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "use-saga.d.ts",
+    "readme.md"
+  ],
+  "dependencies": {
+    "little-saga": "^0.5.4",
+    "react": "16.7.0-alpha.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.13.7",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.67.1"
+  }
+}
