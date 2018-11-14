@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { runSaga, stdChannel, identity } from 'little-saga'
+const { useCallback, useEffect, useRef, useState } = require('react')
+const { runSaga, stdChannel, identity } = require('little-saga')
 
-export default function useSaga(
+module.exports = function useSaga(
   { saga, args = [], reducer = identity, initState, initAction, customEnv },
   inputs,
 ) {
