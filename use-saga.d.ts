@@ -11,7 +11,7 @@ export interface UseSagaOptions<S, A> {
   reducer?(state: S, action: A): S
   initState?: S
   initAction?: A
-  customEnv: any
+  customEnv?: any
 }
 
 export default function useSaga<S, A extends AnyAction = AnyAction>(

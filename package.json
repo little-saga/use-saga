@@ -7,8 +7,8 @@
     "name": "shinima",
     "email": "842351815@qq.com"
   },
-  "main": "dist/react-model.js",
-  "module": "dist/react-model.mjs",
+  "main": "dist/use-saga.js",
+  "module": "dist/use-saga.mjs",
   "typings": "react-model.d.ts",
   "scripts": {
     "build": "rollup -c rollup.config.js",

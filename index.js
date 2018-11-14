@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { runSaga, stdChannel } from 'little-saga'
+import { runSaga, stdChannel, identity } from 'little-saga'
 
 export default function useSaga(
-  { saga, args = [], reducer, initState, initAction, customEnv },
+  { saga, args = [], reducer = identity, initState, initAction, customEnv },
   inputs,
 ) {
   const chanRef = useRef(stdChannel())
