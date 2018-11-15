@@ -16,5 +16,4 @@ export interface UseSagaOptions<S, A> {
 
 export default function useSaga<S, A extends AnyAction = AnyAction>(
   options: UseSagaOptions<S, A>,
-  inputs: any[],
 ): [S, Dispatch<A>]
