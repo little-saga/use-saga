@@ -17,7 +17,7 @@
 import useSaga from '@little-saga/use-saga'
 
 function OurReactComponent() {
-  const [state, dispatch] = useSaga(options, inputs)
+  const [state, dispatch] = useSaga(options)
 
   // ... 其他代码 ...
 }
@@ -34,9 +34,7 @@ function OurReactComponent() {
 | initAction | 任意合法的 action | `undefined` | 创建状态容器时用于初始化状态的 action<br/>如不提供该字段，则创建容器时不派发 action                                         |
 | customEnv  | 任意值            | `undefined` | 指定 运行运行环境对象中的额外字段 <br/>[详见 runSaga#options.customEnv](https://github.com/little-saga/little-saga#runsaga) |
 
-**参数 `inputs`** 与 [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect) 的 inputs 参数含义一致。当 useSaga 检测到 inputs 数组发生变化时，将会取消上一个 saga 实例的运行，并使用新的生成器与参数启动一个新的 saga 实例。注意，如果不提供 `inputs` 参数，则每次渲染都会执行「取消上一个任务——启动新的任务」，这往往不是我们所期望的行为，所以 **绝大部分情况下我们需要提供该参数**。
-
-**`useSaga` 的返回值**与 `useReducer` 的返回值相同，是一个二元元祖，一般我们使用数组解构将其赋值给变量 `state` 与 `dispatch`。`state` 表示当前状态容器的最新状态，`dispatch` 用于向状态容器 / saga 运行时派发 action。
+**`useSaga` 的返回值**与 `useReducer` 的返回值相同，一般我们可以用数组解构的方式将其赋值给变量 `state` 与 `dispatch`。`state` 表示当前状态容器的最新状态，`dispatch` 用于向状态容器 / saga 运行时派发 action。
 
 ## 使用举例
 
