@@ -10,6 +10,7 @@ module.exports = function useSaga({
   initState,
   initAction,
   customEnv,
+  taskContext,
 }) {
   const chanRef = useRef(null)
   const stateRef = useRef(initState)
@@ -35,7 +36,7 @@ module.exports = function useSaga({
     chanRef.current = channel
 
     const rootTask = runSaga(
-      { channel, getState: () => stateRef.current, customEnv },
+      { channel, getState: () => stateRef.current, customEnv, taskContext },
       saga,
       ...args,
     )

@@ -12,6 +12,7 @@ export interface UseSagaOptions<S, A> {
   initState?: S
   initAction?: A
   customEnv?: any
+  taskContext?: any
 }
 
 export default function useSaga<S, A extends AnyAction = AnyAction>(

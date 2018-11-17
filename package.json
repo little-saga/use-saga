@@ -1,7 +1,7 @@
 {
   "name": "@little-saga/use-saga",
   "license": "MIT",
-  "version": "0.1.4",
+  "version": "0.6.0",
   "description": "Run little-saga inside a React component using React hooks.",
   "repository": "https://github.com/little-saga/use-saga.git",
   "author": {
@@ -16,7 +16,7 @@
     "readme.md"
   ],
   "dependencies": {
-    "little-saga": "^0.5.4",
+    "little-saga": "^0.6.0",
     "react": "16.7.0-alpha.0 || 16.7.0-alpha.1 || 16.7.0-alpha.2"
   },
   "devDependencies": {
