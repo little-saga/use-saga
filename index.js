@@ -7,14 +7,17 @@ module.exports = function useSaga({
   saga,
   args = [],
   reducer = identity,
-  initState,
-  initAction,
+  initialState,
+  initialAction,
   customEnv,
   taskContext,
 }) {
   const chanRef = useRef(null)
-  const stateRef = useRef(initState)
-  const [state, setState] = useState(initState)
+  if (initialAction) {
+    initialState = reducer(initialState, initialAction)
+  }
+  const stateRef = useRef(initialState)
+  const [state, setState] = useState(initialState)
 
   useEffect(() => {
     function hitReducer(action) {
@@ -22,10 +25,6 @@ module.exports = function useSaga({
       const nextState = reducer(prevState, action)
       stateRef.current = nextState
       setState(nextState)
-    }
-
-    if (initAction) {
-      hitReducer(initAction)
     }
 
     const enhancer = put => action => {

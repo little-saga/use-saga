@@ -25,15 +25,15 @@ function OurReactComponent() {
 
 **参数 `options`** 是一个对象，具体字段如下：
 
-| 字段        | 类型              | 默认值      | 含义                                                                                                                        |
-| ----------- | ----------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------- |
-| saga        | 生成器函数        | 必须字段    | 所要执行的 saga 函数                                                                                                        |
-| args        | 数组              | `[]`        | 启动 saga 函数时所使用的参数                                                                                                |
-| reducer     | 函数              | `x => x`    | 指定 state 如何响应 actions                                                                                                 |
-| initState   | 任意值            | `undefined` | 初始状态                                                                                                                    |
-| initAction  | 任意合法的 action | `undefined` | 创建状态容器时用于初始化状态的 action<br/>如不提供该字段，则创建容器时不派发 action                                         |
-| customEnv   | 任意值            | `undefined` | 指定 运行运行环境对象中的额外字段 <br/>[详见 runSaga#options.customEnv](https://github.com/little-saga/little-saga#runsaga) |
-| taskContext | 普通对象          | `undefined` | root task 的初始 context <br/>[详见 runSaga#options.taskContext](https://github.com/little-saga/little-saga#runsaga)          |
+| 字段            | 类型              | 默认值      | 含义                                                                                                                                    |
+| --------------- | ----------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `saga`          | 生成器函数        | 必须字段    | 所要执行的 saga 函数                                                                                                                    |
+| `args`          | 数组              | `[]`        | 启动 saga 函数时所使用的参数                                                                                                            |
+| `reducer`       | 函数              | `x => x`    | 指定 state 如何响应 actions                                                                                                             |
+| `initialState`  | 任意值            | `undefined` | 初始状态                                                                                                                                |
+| `initialAction` | 任意合法的 action | `undefined` | 创建状态容器时用于初始化状态的 action<br/>[详见 `useReducer` 文档](https://reactjs.org/docs/hooks-reference.html#lazy-initialization-1) |
+| `customEnv`     | 任意值            | `undefined` | 指定 运行运行环境对象中的额外字段 <br/>[详见 runSaga#options.customEnv](https://github.com/little-saga/little-saga#runsaga)             |
+| `taskContext`   | 普通对象          | `undefined` | root task 的初始 context <br/>[详见 runSaga#options.taskContext](https://github.com/little-saga/little-saga#runsaga)                    |
 
 **`useSaga` 的返回值**与 `useReducer` 的返回值相同，一般我们可以用数组解构的方式将其赋值给变量 `state` 与 `dispatch`。`state` 表示当前状态容器的最新状态，`dispatch` 用于向状态容器 / saga 运行时派发 action。
 
