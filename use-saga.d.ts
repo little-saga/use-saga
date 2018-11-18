@@ -9,8 +9,8 @@ export interface UseSagaOptions<S, A> {
   saga: Function
   args?: any[]
   reducer?(state: S, action: A): S
-  initState?: S
-  initAction?: A
+  initialState?: S
+  initialAction?: A
   customEnv?: any
   taskContext?: any
 }
