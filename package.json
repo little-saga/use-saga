@@ -16,7 +16,7 @@
     "readme.md"
   ],
   "dependencies": {
-    "little-saga": "^0.6.0",
+    "little-saga": "^0.6.1",
     "react": "16.7.0-alpha.0 || 16.7.0-alpha.1 || 16.7.0-alpha.2"
   },
   "devDependencies": {

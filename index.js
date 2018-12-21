@@ -17,25 +17,32 @@ module.exports = function useSaga({
     initialState = reducer(initialState, initialAction)
   }
   const stateRef = useRef(initialState)
-  const [state, setState] = useState(initialState)
+  const [state, _setState] = useState(initialState)
 
   useEffect(() => {
-    function hitReducer(action) {
-      const prevState = stateRef.current
-      const nextState = reducer(prevState, action)
+    const getState = () => stateRef.current
+    const setState = nextState => {
       stateRef.current = nextState
-      setState(nextState)
+      _setState(nextState)
     }
 
     const enhancer = put => action => {
-      hitReducer(action)
+      // hit reducer before put the action into the channel
+      setState(reducer(getState(), action))
+
       return put(action)
     }
     const channel = stdChannel().enhancePut(enhancer)
     chanRef.current = channel
 
     const rootTask = runSaga(
-      { channel, getState: () => stateRef.current, customEnv, taskContext },
+      {
+        channel,
+        getState,
+        setState,
+        customEnv,
+        taskContext,
+      },
       saga,
       ...args,
     )
