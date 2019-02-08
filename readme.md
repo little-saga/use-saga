@@ -9,7 +9,7 @@
 **注意事项：**
 
 - useSaga 是一个 React hook，使用 useSaga 需要符合 hook 的书写规则。
-- 该类库只能与 little-saga 一起使用，且要求 React 为支持 hooks 的版本（>= 16.7）.
+- 该类库只能与 little-saga 一起使用，且要求 React 为支持 hooks 的版本（>= 16.8）.
 
 ## 使用方式
 
